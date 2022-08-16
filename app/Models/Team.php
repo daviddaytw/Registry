@@ -41,4 +41,12 @@ class Team extends JetstreamTeam
         'updated' => TeamUpdated::class,
         'deleted' => TeamDeleted::class,
     ];
+
+    /**
+     * Get all of the team's registries.
+     */
+    public function registries()
+    {
+        return $this->hasMany(Registry::class);
+    }
 }
