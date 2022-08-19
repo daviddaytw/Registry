@@ -12,7 +12,8 @@
         "laravel/jetstream": "^2.10",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "livewire/livewire": "^2.5"
+        "livewire/livewire": "^2.5",
+        "mpociot/versionable": "^4.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
