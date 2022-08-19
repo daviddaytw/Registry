@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "Putting the website into maintenance mode..."
-php artiasn down
+php artisan down
 
 echo "Pulling the latest code..."
 git pull
@@ -26,4 +26,4 @@ echo "Running migrations..."
 php artisan migrate --force
 
 echo "Putting the website back online..."
-php artiasn up
+php artisan up
