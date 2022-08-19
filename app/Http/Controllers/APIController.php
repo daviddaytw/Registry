@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\RegistryResource;
 use App\Models\Registry;
 use Illuminate\Http\Request;
 
@@ -34,8 +33,7 @@ class APIController extends Controller
      *     ),
      *     @OA\Response(
      *         response=200,
-     *         description="successful operation",
-     *         @OA\JsonContent(ref="#/components/schemas/Registry")
+     *         description="successful operation, returns the data in registry",
      *     ),
      *     @OA\Response(
      *         response=400,
@@ -53,7 +51,7 @@ class APIController extends Controller
             return response('Access denied', 403);
         }
 
-        return new RegistryResource($registry);
+        return $registry->data;
     }
 
     /**
