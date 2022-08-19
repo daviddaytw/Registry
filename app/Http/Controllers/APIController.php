@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\RegistryResource;
 use App\Models\Registry;
 use Illuminate\Http\Request;
 
