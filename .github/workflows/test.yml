@@ -3,7 +3,7 @@ name: Laravel Test
 on: push
 
 jobs:
-  laravel-tests:
+  tests:
 
     runs-on: ubuntu-latest
 

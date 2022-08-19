@@ -3,15 +3,15 @@
 echo "Putting the website into maintenance mode..."
 php artisan down
 
-echo "Pulling the latest code..."
-git pull
-
 echo "Running composer..."
 rm -rf ./vendor
-composer install --optimize-autoloader --no-dev
+/opt/cpanel/composer/bin/composer install --optimize-autoloader --no-dev
 
 echo "Linking storage..."
 php artisan storage:link
+
+echo "Generate API documents..."
+php artisan l5-swagger:generate
 
 echo "Caching config..."
 php artisan config:cache

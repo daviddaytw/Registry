@@ -1,0 +1,45 @@
+name: Publish Registry
+
+on: release
+
+jobs:
+  publish:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Directory Permissions
+      run: chmod -R 777 storage bootstrap/cache
+
+    - name: Install npm packages
+      run: npm ci
+    - name: Build frontend bundle
+      run: npm run build
+
+    - name: Upload to server
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ftp.registry.davidday.tw
+        username: ci@registry.davidday.tw
+        password: ${{ secrets.FTP_PASSWORD }}
+        exclude: |
+          .env*
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          storage/**
+          bootstrap/cache/**
+
+    - name: Execute deployment script
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd Registry
+          chmox +x deploy.sh
+          ./deploy.sh
