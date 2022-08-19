@@ -18,6 +18,7 @@ class RegistryFactory extends Factory
     public function definition()
     {
         return [
+            'id' => Str::uuid(),
             'data' => fake()->text,
             'access_token' => Str::random(64),
             'write_token' => Str::random(64),
