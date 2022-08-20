@@ -15,7 +15,9 @@
             <div class="bg-gray-100 rounded w-full p-1">
                 <code><pre>{{ $registry->data }}</pre></code>
             </div>
-            <a class="after:absolute after:inset-0" href="{{ route('registry.show', [$registry]) }}"></a>
+            <div class="text-right">
+                <a class="after:absolute after:inset-0 text-sky-600 hover:text-sky-500" href="{{ route('registry.show', [$registry]) }}">>></a>
+            </div>
         </div>
         @endforeach
     </div>

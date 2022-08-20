@@ -13,7 +13,7 @@
                     <select id="ownerSelector" name="owner" class="mx-2 rounded">
                         <option value="">{{ __('Anonymous') }}</option>
                         @foreach( auth()->user()->allTeams() as $team )
-                        <option value="{{ $team->id }}">{{ $team->name }}</option>
+                        <option value="{{ $team->id }}" @if( $team == auth()->user()->currentTeam) selected @endif>{{ $team->name }}</option>
                         @endforeach
                     </select>
                 </div>
