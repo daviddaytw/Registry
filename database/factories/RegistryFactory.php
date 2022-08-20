@@ -19,6 +19,7 @@ class RegistryFactory extends Factory
     {
         return [
             'id' => Str::uuid(),
+            'label' => fake()->text,
             'data' => fake()->text,
             'access_token' => Str::random(64),
             'write_token' => Str::random(64),

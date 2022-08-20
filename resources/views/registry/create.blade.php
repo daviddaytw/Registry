@@ -9,8 +9,12 @@
             </div>
             <fieldset>
                 <div class="flex items-center mb-3">
+                    <label for="labelInput" class="ml-2 font-medium text-gray-900">{{ __('Label:') }}</label>
+                    <input type="text" id="labelInput" name="label" class="mx-2 rounded text-sm text-gray-900 bg-gray-50 border-gray-300" placeholder="{{ __('optional') }}" />
+                </div>
+                <div class="flex items-center mb-3">
                     <label for="ownerSelector" class="ml-2 font-medium text-gray-900">{{ __('Owner:') }}</label>
-                    <select id="ownerSelector" name="owner" class="mx-2 rounded">
+                    <select id="ownerSelector" name="owner" class="mx-2 rounded border-gray-300">
                         <option value="">{{ __('Anonymous') }}</option>
                         @foreach( auth()->user()->allTeams() as $team )
                         <option value="{{ $team->id }}" @if( $team == auth()->user()->currentTeam) selected @endif>{{ $team->name }}</option>

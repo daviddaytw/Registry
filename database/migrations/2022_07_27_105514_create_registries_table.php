@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('registries', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->text('label')->nullable();
             $table->longText('data');
             $table->string('access_token', 64)->nullable();
             $table->string('write_token', 64)->nullable();

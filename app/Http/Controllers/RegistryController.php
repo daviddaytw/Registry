@@ -52,6 +52,7 @@ class RegistryController extends Controller
 
         $registry = Registry::create([
             'id' => $uuid,
+            'label' => $request->label,
             'data' => $request->data,
             'access_token' => $request->protectAccess ? Str::random(64) : null,
             'write_token' => $request->protectWrite ? Str::random(64) : null,

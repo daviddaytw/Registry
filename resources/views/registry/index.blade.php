@@ -1,17 +1,18 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h1 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
-        </h2>
+        </h1>
     </x-slot>
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 px-3">
         <div class="py-6">
             <a href="{{ route('registry.create') }}">{{ __('Create Registry') }}</a>
         </div>
         @foreach( $registries as $registry )
-        <div class="relative bg-white shadow-sm sm:rounded-lg hover:border px-8 py-4 mb-4">
+        <div class="relative bg-white shadow-sm rounded sm:rounded-lg hover:border px-4 sm:px-8 py-4 mb-4">
             <h2>{{ $registry->id }}</h2>
+            <h3 class="text-gray-500">{{ $registry->label }}</h3>
             <div class="bg-gray-100 rounded w-full p-1">
                 <code><pre>{{ $registry->data }}</pre></code>
             </div>

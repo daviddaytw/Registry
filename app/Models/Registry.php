@@ -16,7 +16,7 @@ class Registry extends Model
      * @var string[]
      */
     protected $fillable = [
-        'id', 'data', 'access_token', 'write_token',
+        'id', 'label', 'data', 'access_token', 'write_token',
     ];
 
     /**
