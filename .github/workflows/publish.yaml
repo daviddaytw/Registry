@@ -39,6 +39,7 @@ jobs:
           **/node_modules/**
           storage/**
           bootstrap/cache/**
+          vendor/**
 
     - name: Execute deployment script
       uses: appleboy/ssh-action@master
