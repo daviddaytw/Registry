@@ -4,16 +4,13 @@
         <div class="w-full container mx-auto p-6">
 
             <div class="w-full flex items-center justify-between">
-                <a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"  href="#">
+                <a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" @auth href="{{ route('dashboard') }}" @endauth @guest href="{{ url('/') }}" @endguest>
                     Registry
                 </a>
 
                 <div class="flex w-1/2 justify-end content-center">
-                    <a class="inline-block text-blue-300 no-underline hover:text-indigo-800 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 " data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#">
-                        <svg class="fill-current h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
-                    </a>
-                    <a class="inline-block text-indigo-400 no-underline hover:text-indigo-600 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 " href="{{ route('register') }}">
-                        {{ __('Signup') }}
+                    <a class="inline-block text-blue-400 no-underline hover:text-indigo-800 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4" href="{{ route('register') }}">
+                        {{ __('SignUp') }}
                     </a>
                 </div>
 
@@ -26,7 +23,7 @@
 
             <h1 class="my-3 text-3xl md:text-5xl text-purple-800 font-bold leading-tight text-center">{{ __('A very SIMPLE, LAZY manner.') }}</h1>
             <p class="leading-normal text-base md:text-2xl mb-8 text-center">{{ __('Web storage service for tiny data.') }}</p>
-            <div class="px-36">
+            <div class="sm:px-36 px-12">
                 <x-use-sample></x-use-sample>
             </div>
         </div>
