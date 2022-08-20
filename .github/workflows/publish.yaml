@@ -14,6 +14,12 @@ jobs:
 
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
+      
+
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+    - name: Publish Jetsteam Components
+      run: php artisan vendor:publish --tag=jetstream-views
 
     - name: Install npm packages
       run: npm ci
