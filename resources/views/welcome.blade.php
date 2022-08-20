@@ -21,13 +21,18 @@
 
         </div>
 
-        <!--Main-->
-        <div class="container pt-12 md:pt-24 px-6 pb-4 mx-auto items-center">
+        <!--Hero-->
+        <div class="container pt-6 md:pt-12 px-6 pb-4 mx-auto items-center">
 
-            <h1 class="my-4 text-3xl md:text-5xl text-purple-800 font-bold leading-tight text-center md:text-left">{{ __('Create, Read and Update.') }}</h1>
-            <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left">{{ __('Web storage service for tiny data.') }}</p>
-
-            <p class="text-blue-400 font-bold pb-8 lg:pb-6 text-center md:text-left fade-in">Create regsitry for free:</p>
+            <h1 class="my-3 text-3xl md:text-5xl text-purple-800 font-bold leading-tight text-center">{{ __('A very SIMPLE, LAZY manner.') }}</h1>
+            <p class="leading-normal text-base md:text-2xl mb-8 text-center">{{ __('Web storage service for tiny data.') }}</p>
+            <div class="px-36">
+                <x-use-sample></x-use-sample>
+            </div>
+        </div>
+        <!--Form-->
+        <div class="container pt-6 md:pt-12 px-12 pb-4 mx-auto items-center">
+            <h2 class="text-2xl text-blue-400 font-bold pb-8 lg:pb-6 text-center md:text-left">{{ __('Create regsitry for free:') }}</h2>
 
             <form action="{{ route("registry.store") }}" method="post">
                 @csrf

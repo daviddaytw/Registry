@@ -59,5 +59,8 @@
                 </div>
             </div>
         </div>
+        <div class="container mx-auto px-8 mb-4">
+            <x-use-sample :registry="$registry"></x-use-sample>
+        </div>
 
 </x-guest-layout>
