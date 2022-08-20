@@ -43,11 +43,15 @@
                     @endif
                 </div>
                 <div class="flex flex-row-reverse">
+                    @auth
+                    @if( auth()->user()->allTeams()->contains($registry->team) )
                     <form action="{{ route('registry.destroy', [$registry]) }}" method="post">
                     @csrf
                     @method('DELETE')
                         <button type="submit">{{ __('Destroy') }}</button>
                     </form>
+                    @endif
+                    @endauth
                 </div>
             </div>
         </div>
