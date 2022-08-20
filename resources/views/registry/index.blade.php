@@ -11,8 +11,11 @@
         </div>
         @foreach( $registries as $registry )
         <div class="relative bg-white shadow-sm rounded sm:rounded-lg hover:border px-4 sm:px-8 py-4 mb-4">
-            <h2>{{ $registry->id }}</h2>
-            <h3 class="text-gray-500">{{ $registry->label }}</h3>
+            <div>
+                <span class="text-gray-500 italic float-right text-sm">{{ __('Last update at: :time', [ 'time' => $registry->updated_at ]) }}</span>
+                <h2>{{ $registry->id }}</h2>
+                <h3 class="text-gray-500">{{ $registry->label }}</h3>
+            </div>
             <div class="bg-gray-100 rounded w-full p-1">
                 <code><pre>{{ $registry->data }}</pre></code>
             </div>

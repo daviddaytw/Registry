@@ -24,8 +24,11 @@
         <!--Main-->
         <div class="container pt-12 md:pt-24 px-6 pb-4 mx-auto items-center">
             <div class="bg-white overflow-hidden border rounded sm:rounded-lg px-8 py-4 mb-4">
-                <h1 class="text-lg">{{ $registry->id }}</h1>
-                <h2 class="font-semibold text-gray-500">{{ $registry->label }}</h2>
+                <div>
+                    <span class="text-gray-500 italic float-right">{{ __('Last update at: :time', [ 'time' => $registry->updated_at ]) }}</span>
+                    <h1 class="text-lg">{{ $registry->id }}</h1>
+                    <h2 class="font-semibold text-gray-500">{{ $registry->label }}</h2>
+                </div>
                 <div class="border border-2 rounded w-full p-1">
                     <code><pre>{{ $registry->data }}</pre></code>
                 </div>
