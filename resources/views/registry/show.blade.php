@@ -9,6 +9,9 @@
                 </a>
 
                 <div class="flex w-1/2 justify-end content-center">
+                    <a class="inline-block text-blue-400 no-underline hover:text-indigo-800 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4" href="{{ url('/docs') }}">
+                        {{ __('Docs') }}
+                    </a>
                     <a class="inline-block text-blue-400 no-underline hover:text-indigo-800 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4" href="{{ route('register') }}">
                         {{ __('SignUp') }}
                     </a>

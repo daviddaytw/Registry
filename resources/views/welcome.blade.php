@@ -9,6 +9,9 @@
                 </a>
 
                 <div class="flex w-1/2 justify-end content-center">
+                    <a class="inline-block text-blue-400 no-underline hover:text-indigo-800 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4" href="{{ url('/docs') }}">
+                        {{ __('Docs') }}
+                    </a>
                     <a class="inline-block text-blue-400 no-underline hover:text-indigo-800 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4" href="{{ route('register') }}">
                         {{ __('SignUp') }}
                     </a>
@@ -23,7 +26,7 @@
 
             <h1 class="my-3 text-3xl md:text-5xl text-purple-800 font-bold leading-tight text-center">{{ __('A very SIMPLE, LAZY manner.') }}</h1>
             <p class="leading-normal text-base md:text-2xl mb-8 text-center">{{ __('Web storage service for tiny data.') }}</p>
-            <div class="sm:px-36 px-12">
+            <div class="sm:px-36 px-6">
                 <x-use-sample></x-use-sample>
             </div>
         </div>
