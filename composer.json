@@ -6,8 +6,8 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "darkaonline/l5-swagger": "^8.3",
         "guzzlehttp/guzzle": "^7.2",
+        "knuckleswtf/scribe": "^3.36",
         "laravel/framework": "^9.19",
         "laravel/jetstream": "^2.10",
         "laravel/sanctum": "^2.14.1",

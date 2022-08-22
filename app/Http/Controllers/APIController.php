@@ -9,37 +9,8 @@ class APIController extends Controller
 {
     /**
      * Show the registry.
-     *
-     * @OA\Get(
-     *     path="/registry/{registryId}",
-     *     summary="Retrieve the registry.",
-     *     tags={"Registry"},
-     *     @OA\Parameter (
-     *          name = "registryId",
-     *          in = "path",
-     *          description = "The identifier of the registry.",
-     *          required = true,
-     *          schema = {
-     *              "type" = "string",
-     *          },
-     *     ),
-     *     @OA\Parameter (
-     *          name = "Authorization",
-     *          in = "header",
-     *          description = "Enter token in format (Bearer (token))",
-     *          schema = {
-     *              "type" = "string",
-     *          },
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="successful operation, returns the data in registry",
-     *     ),
-     *     @OA\Response(
-     *         response=400,
-     *         description="Invalid status value"
-     *     ),
-     * )
+     * 
+     * @header Authorization Bearer (token)
      *
      * @param  Request  $request
      * @param  Registry  $registry
@@ -57,52 +28,8 @@ class APIController extends Controller
     /**
      * Update the registry.
      *
-     * @OA\Put(
-     *     path="/registry/{registryId}",
-     *     summary="Retrieve the registry.",
-     *     tags={"Registry"},
-     *     @OA\Parameter (
-     *          name = "registryId",
-     *          in = "path",
-     *          description = "The identifier of the registry.",
-     *          required = true,
-     *          schema = {
-     *              "type" = "string",
-     *          },
-     *     ),
-     *     @OA\Parameter (
-     *          name = "Authorization",
-     *          in = "header",
-     *          description = "Enter token in format (Bearer (token))",
-     *          schema = {
-     *              "type" = "string",
-     *          },
-     *     ),
-     *     @OA\RequestBody(
-     *         description="Object's data to store.",
-     *         required=true,
-     *         @OA\MediaType(
-     *              mediaType="application/json",
-     *              @OA\Schema(
-     *                  type="object",
-     *                  @OA\Property(
-     *                      property = "data",
-     *                      description = "The data to update the registry.",
-     *                      type = "string",
-     *                  )
-     *              ),
-     *          ),
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="successful operation",
-     *     ),
-     *     @OA\Response(
-     *         response=400,
-     *         description="Invalid status value"
-     *     ),
-     * )
-     *
+     * @header Authorization Bearer (token)
+     * 
      * @param  Request  $request
      * @param  Registry  $registry
      * @return type

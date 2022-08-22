@@ -11,7 +11,7 @@ echo "Linking storage..."
 php artisan storage:link
 
 echo "Generate API documents..."
-php artisan l5-swagger:generate
+php artisan scribe:generate
 
 echo "Caching config..."
 php artisan config:cache
