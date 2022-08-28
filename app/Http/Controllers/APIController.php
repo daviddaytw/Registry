@@ -9,7 +9,7 @@ class APIController extends Controller
 {
     /**
      * Show the registry.
-     * 
+     *
      * @header Authorization Bearer (token)
      *
      * @param  Request  $request
@@ -29,7 +29,7 @@ class APIController extends Controller
      * Update the registry.
      *
      * @header Authorization Bearer (token)
-     * 
+     *
      * @param  Request  $request
      * @param  Registry  $registry
      * @return type

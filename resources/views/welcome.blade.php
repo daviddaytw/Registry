@@ -26,6 +26,7 @@
 
             <h1 class="my-3 text-3xl md:text-5xl text-purple-800 font-bold leading-tight text-center">{{ __('A very SIMPLE, LAZY manner.') }}</h1>
             <p class="leading-normal text-base md:text-2xl mb-8 text-center">{{ __('Web storage service for tiny data.') }}</p>
+            <p class="leading-normal text-base md:text-2xl mb-8 text-center">{{ __('Currently hosting') }} <strong>{{ $count }}</strong> entries.</p>
             <div class="sm:px-36 px-6">
                 <x-use-sample></x-use-sample>
             </div>

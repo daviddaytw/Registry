@@ -18,7 +18,9 @@ Route::get('/', function () {
     if (auth()->check()) {
         return redirect('dashboard');
     } else {
-        return view('welcome');
+        return view('welcome', [
+            'count' => App\Models\Registry::count(),
+        ]);
     }
 });
 
