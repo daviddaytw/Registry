@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Registry;
 use App\Models\Team;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Str;
@@ -60,7 +61,8 @@ class RegistryController extends Controller
 
         if ($request->owner) {
             $team = Team::find($request->owner);
-            if (auth()->user()->belongsToTeam($team)) {
+            $user = User::find(auth()->id());
+            if ($user->belongsToTeam($team)) {
                 $registry->team()->associate($team);
                 $registry->save();
             }
@@ -113,7 +115,8 @@ class RegistryController extends Controller
      */
     public function destroy(Registry $registry)
     {
-        if (auth()->user()->allTeams()->contains($registry->team)) {
+        $user = User::find(auth()->id());
+        if ($user->allTeams()->contains($registry->team)) {
             $registry->delete();
         }
 
