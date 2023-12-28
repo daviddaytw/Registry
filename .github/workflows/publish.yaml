@@ -49,6 +49,6 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-          cd Registry
+          cd sites/Registry
           chmox +x deploy.sh
           ./deploy.sh
