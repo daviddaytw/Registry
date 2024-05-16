@@ -1,7 +1,9 @@
 name: Publish Registry
 
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - 'main'
 
 jobs:
   publish:
@@ -33,7 +35,7 @@ jobs:
     - name: Upload to server
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: ftp.registry.davidday.tw
+        server: ftp.davidday.tw
         username: ci@registry.davidday.tw
         password: ${{ secrets.FTP_PASSWORD }}
         exclude: |

@@ -70,5 +70,9 @@
                 <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">{{ __('Create') }}</button>
             </form>
         </div>
-
+        <footer class="p-4 flex gap-2 justify-end">
+            <div class="text-gray-500">Built with ❤️ by <a href="https://davidday.tw" class="text-sky-600" target="_blank">David Day</a></div>
+            <iframe src="https://ghbtns.com/github-btn.html?user=daviddaytw&repo=Registry&type=star&count=true" frameBorder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+        </footer>
+    </div>
 </x-guest-layout>
