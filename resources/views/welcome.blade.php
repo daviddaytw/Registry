@@ -42,6 +42,14 @@
                 </div>
                 <fieldset>
                     <div class="flex items-center mb-3">
+                        <label for="expireSelector" class="ml-2 font-medium text-gray-900">{{ __('Expire at:') }}</label>
+                        <select id="expireSelector" name="expiration" class="mx-2 rounded border-gray-300">
+                            <option value="">{{ __('Never') }}</option>
+                            <option value="1">{{ __('1 Day') }}</option>
+                            <option value="30">{{ __('30 Days') }}</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center mb-3">
                         <input type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" id="protectAccessCheckbox" name="protectAccess" />
                         <label for="protectAccessCheckbox" class="ml-2 font-medium text-gray-900">{{ __('Protect the accessibility of registry with access token.') }}</label>
                     </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Registry;
 use App\Models\Team;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Str;
@@ -45,6 +46,7 @@ class RegistryController extends Controller
     {
         $request->validate([
             'data' => 'required',
+            'expiration' => 'nullable|numeric',
         ]);
 
         do {
@@ -58,6 +60,11 @@ class RegistryController extends Controller
             'access_token' => $request->protectAccess ? Str::random(64) : null,
             'write_token' => $request->protectWrite ? Str::random(64) : null,
         ]);
+
+        if ($request->expiration) {
+            $registry->deleted_at = Carbon::now()->addDays($request->expiration);
+            $registry->save();
+        }
 
         if ($request->owner) {
             $team = Team::find($request->owner);

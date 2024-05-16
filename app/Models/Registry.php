@@ -4,12 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Mpociot\Versionable\VersionableTrait;
 
 class Registry extends Model
 {
-    use HasFactory, VersionableTrait, SoftDeletes;
+    use HasFactory, VersionableTrait;
 
     /**
      * The attributes that are mass assignable.
