@@ -22,8 +22,5 @@ php artisan route:cache
 echo "Caching views..."
 php artisan view:cache
 
-echo "Running migrations..."
-php artisan migrate --force
-
 echo "Putting the website back online..."
 php artisan up
