@@ -62,7 +62,7 @@ class RegistryController extends Controller
         ]);
 
         if ($request->expiration) {
-            $registry->deleted_at = Carbon::now()->addDays($request->expiration);
+            $registry->deleted_at = Carbon::now()->addDays((int)$request->expiration);
             $registry->save();
         }
 
